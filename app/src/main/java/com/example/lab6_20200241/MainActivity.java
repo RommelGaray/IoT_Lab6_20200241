@@ -29,6 +29,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         Usuario usuario = new Usuario();
         usuario.setNombre(userName);
-        usuario.setIngreso(null);
-        usuario.setEgreso(null);
+        usuario.setIngreso(Collections.emptyList());
+        usuario.setEgreso(Collections.emptyList());
 
         db.collection("usuarios")
                 .document(userId)

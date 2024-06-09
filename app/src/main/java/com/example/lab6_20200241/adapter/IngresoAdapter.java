@@ -9,11 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lab6_20200241.R;
 import com.example.lab6_20200241.dtos.Ingreso;
 
 import java.util.List;
 
-public class IngresoAdapter RecyclerView.Adapter<IngresoAdapter.ingresoViewholder> {
+public class IngresoAdapter extends RecyclerView.Adapter<IngresoAdapter.ingresoViewHolder> {
 
     Context context;
     List<Ingreso> list;
@@ -25,36 +26,36 @@ public class IngresoAdapter RecyclerView.Adapter<IngresoAdapter.ingresoViewholde
 
     @NonNull
     @Override
-    public ingresoHolderView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ingresoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_ingreso,parent,false);
-        return new ingresoHolderView(view);
+        return new ingresoViewHolder(view);
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull ingresoViewHolder holder, int position) {
         Ingreso ingreso = list.get(position);
 
-        holder.tittleItem.setText(ingreso.getTitulo());
-        holder.descriptionItem.setText(ingreso.getDescripcion());
-        String amountString = String.valueOf(income.getAmount());
-        holder.amountItem.setText(String.format("s/ %s", amountString));
+        holder.tituloItem.setText(ingreso.getTitulo());
+        holder.descripcionItem.setText(ingreso.getDescripcion());
+        holder.fechaItem.setText(ingreso.getFecha());
+        holder.montoItem.setText((int) ingreso.getMonto());
+
     }
 
-
     @Override
-    public int getAmount() {
+    public int getItemCount() {
         return list.size();
     }
 
 
     public class ingresoViewHolder extends RecyclerView.ViewHolder{
-        TextView tittleItem, descriptionItem, amountItem;
+        TextView tituloItem, descripcionItem, fechaItem, montoItem;
         public ingresoViewHolder(@NonNull View itemView) {
             super(itemView);
-            tittleItem = itemView.findViewById(R.id.nombre);
-            descriptionItem = itemView.findViewById(R.id.description);
-            amountItem = itemView.findViewById(R.id.amount);
+            tituloItem = itemView.findViewById(R.id.titulo);
+            descripcionItem = itemView.findViewById(R.id.descripcion);
+            fechaItem = itemView.findViewById(R.id.fecha);
+            montoItem = itemView.findViewById(R.id.monto);
         }
     }
 

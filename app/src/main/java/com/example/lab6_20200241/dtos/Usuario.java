@@ -1,18 +1,19 @@
 package com.example.lab6_20200241.dtos;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Usuario {
     private String nombre;
     private String apellido;
-    private Arrays Ingreso;
+    private List<String> Ingreso;
 
-    private Arrays Egreso;
+    private List<String> Egreso;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido, Arrays ingreso, Arrays egreso) {
+    public Usuario(String nombre, String apellido, List<String> ingreso, List<String> egreso) {
         this.nombre = nombre;
         this.apellido = apellido;
         Ingreso = ingreso;
@@ -35,19 +36,19 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public Arrays getIngreso() {
+    public List<String> getIngreso() {
         return Ingreso;
     }
 
-    public void setIngreso(Arrays ingreso) {
+    public void setIngreso(List<String> ingreso) {
         Ingreso = ingreso;
     }
 
-    public Arrays getEgreso() {
+    public List<String> getEgreso() {
         return Egreso;
     }
 
-    public void setEgreso(Arrays egreso) {
+    public void setEgreso(List<String> egreso) {
         Egreso = egreso;
     }
 }
