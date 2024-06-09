@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Ingreso"
+        android:id="@+id/ingreso"
+        android:icon="@drawable/ic_ingreso"
+        />
+
+    <item android:title="Egreso"
+        android:id="@+id/egreso"
+        android:icon="@drawable/ic_egreso"
+        />
+
+    <item android:title="Resumen"
+        android:id="@+id/resumen"
+        android:icon="@drawable/resumen"/>
+</menu>
